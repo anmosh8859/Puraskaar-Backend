@@ -1,16 +1,16 @@
-package com.puraskar.website.Puraskaar.Data.Management.entity;
+package puraskaar.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 
 import java.time.LocalDate;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Data
-public class RegistrationForm {
+@Table(name = "Volunteer-Registration")
+public class VolunteerRegistration {
 
     @Id
     private String user_name;
