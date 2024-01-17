@@ -1,7 +1,8 @@
-package puraskaar.services;
+package puraskaar.services.volunteer_registration;
 
-import puraskaar.entity.VolunteerRegistration;
-import puraskaar.repository.VolunteerRegistrationRepository;
+import puraskaar.entity.volunteer_registration.VolunteerRegistration;
+import puraskaar.exceptionhandler.UserNotFoundException;
+import puraskaar.repository.volunteer_registration.VolunteerRegistrationRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,16 +24,18 @@ public class VolunteerRegistrationServices {
         return volunteerRegistrationRepository.findAll();
     }
 
-    public VolunteerRegistration findRegistrationFormById(String id){
-        return volunteerRegistrationRepository.findById(id).orElse(null);
+    public VolunteerRegistration findRegistrationFormById(Integer id){
+        VolunteerRegistration volunteer = volunteerRegistrationRepository.findById(id).orElse(null);
+        if(volunteer==null) throw new UserNotFoundException("id: " + id);
+        return volunteer;
     }
 
-    public VolunteerRegistration updateRegistrationForm(VolunteerRegistration form, String id){
+    public VolunteerRegistration updateRegistrationForm(VolunteerRegistration form, Integer id){
         this.deleteById(id);
         return volunteerRegistrationRepository.save(form);
     }
 
-    public void deleteById(String id){
+    public void deleteById(Integer id){
         VolunteerRegistration volunteerRegistration = volunteerRegistrationRepository.findById(id).orElse(null);
         if(volunteerRegistration !=null) volunteerRegistrationRepository.deleteById(id);
     }

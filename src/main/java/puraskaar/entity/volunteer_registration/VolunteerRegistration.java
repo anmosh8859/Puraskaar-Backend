@@ -1,18 +1,22 @@
-package puraskaar.entity;
+package puraskaar.entity.volunteer_registration;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Data
 @Table(name = "Volunteer-Registration")
 public class VolunteerRegistration {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
+    @NonNull
     private String user_name;
 
     @NonNull
