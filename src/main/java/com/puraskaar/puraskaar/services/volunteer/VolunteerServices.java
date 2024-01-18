@@ -1,6 +1,6 @@
-package puraskaar.services.volunteer;
+package com.puraskaar.puraskaar.services.volunteer;
 
-import puraskaar.entity.volunteer.Volunteer;
+import com.puraskaar.puraskaar.entity.volunteer.Volunteer;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package puraskaar;
+package com.puraskaar.puraskaar;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,8 +1,8 @@
-package puraskaar.services.volunteer;
+package com.puraskaar.puraskaar.services.volunteer;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import puraskaar.entity.volunteer.Volunteer;
-import puraskaar.repository.volunteer.VolunteerRegistrationRepository;
+import com.puraskaar.puraskaar.entity.volunteer.Volunteer;
+import com.puraskaar.puraskaar.repository.volunteer.VolunteerRegistrationRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

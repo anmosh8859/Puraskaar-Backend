@@ -1,4 +1,4 @@
-package puraskaar.error;
+package com.puraskaar.puraskaar.error;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

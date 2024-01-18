@@ -1,4 +1,4 @@
-package puraskaar.exceptionhandler;
+package com.puraskaar.puraskaar.exceptionhandler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import puraskaar.error.ErrorDetails;
+import com.puraskaar.puraskaar.error.ErrorDetails;
 
 import java.time.LocalDate;
 

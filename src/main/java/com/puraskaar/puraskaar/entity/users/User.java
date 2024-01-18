@@ -1,4 +1,4 @@
-package puraskaar.entity.volunteer.entity.users;
+package com.puraskaar.puraskaar.entity.users;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,7 +11,7 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "user_table")
+@Table(name = "user")
 public class User {
 
     @Id
