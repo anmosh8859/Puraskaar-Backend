@@ -1,19 +1,17 @@
-package puraskaar.services.volunteer_registration;
+package puraskaar.services.volunteer;
 
-import puraskaar.entity.volunteer_registration.Volunteer;
-import puraskaar.repository.volunteer_registration.VolunteerRegistrationRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import puraskaar.entity.volunteer.Volunteer;
+import puraskaar.repository.volunteer.VolunteerRegistrationRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class VolunteerRegistrationServices {
+public class VolunteerServicesImpl implements VolunteerServices{
 
-    VolunteerRegistrationRepository volunteerRegistrationRepository;
-
-    public VolunteerRegistrationServices(VolunteerRegistrationRepository volunteerRegistrationRepository) {
-        this.volunteerRegistrationRepository = volunteerRegistrationRepository;
-    }
+    @Autowired
+    private VolunteerRegistrationRepository volunteerRegistrationRepository;
 
     public Volunteer saveRegistrationForm(Volunteer form){
         return volunteerRegistrationRepository.save(form);

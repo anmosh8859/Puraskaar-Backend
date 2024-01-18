@@ -1,6 +1,6 @@
-package puraskaar.repository.volunteer_registration;
+package puraskaar.repository.volunteer;
 
-import puraskaar.entity.volunteer_registration.Volunteer;
+import puraskaar.entity.volunteer.Volunteer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

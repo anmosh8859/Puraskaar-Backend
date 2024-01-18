@@ -1,9 +1,10 @@
-package puraskaar.controller.volunteer_registration;
+package puraskaar.controller.volunteer;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import puraskaar.entity.volunteer_registration.Volunteer;
+import puraskaar.entity.volunteer.Volunteer;
 import puraskaar.exceptionhandler.UserNotFoundException;
-import puraskaar.services.volunteer_registration.VolunteerRegistrationServices;
+import puraskaar.services.volunteer.VolunteerServicesImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,14 +12,11 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("volunteer-registration")
+@RequestMapping("volunteers")
 public class VolunteerRegistrationController {
 
-    private VolunteerRegistrationServices services;
-
-    public VolunteerRegistrationController(VolunteerRegistrationServices services) {
-        this.services = services;
-    }
+    @Autowired
+    private VolunteerServicesImpl services;
 
     @GetMapping("/forms")
     public List<Volunteer> retrieveAllRegistrationForms(){
@@ -28,7 +26,7 @@ public class VolunteerRegistrationController {
     @GetMapping("/forms/{id}")
     public Volunteer retriveRegistrationForm(@PathVariable Integer id){
         Volunteer volunteer = services.findRegistrationFormById(id);
-        if(volunteer==null) throw new UserNotFoundException("Volunteer is not present which id: " + id);
+        if(volunteer==null) throw new UserNotFoundException("Volunteer not found, id: " + id);
         return volunteer;
     }
 
