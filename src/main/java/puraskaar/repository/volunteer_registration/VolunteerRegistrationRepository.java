@@ -1,9 +1,9 @@
 package puraskaar.repository.volunteer_registration;
 
-import puraskaar.entity.volunteer_registration.VolunteerRegistration;
+import puraskaar.entity.volunteer_registration.Volunteer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface VolunteerRegistrationRepository extends JpaRepository <VolunteerRegistration, Integer> {
+public interface VolunteerRegistrationRepository extends JpaRepository <Volunteer, Integer> {
 }

@@ -1,7 +1,6 @@
 package puraskaar.services.volunteer_registration;
 
-import puraskaar.entity.volunteer_registration.VolunteerRegistration;
-import puraskaar.exceptionhandler.UserNotFoundException;
+import puraskaar.entity.volunteer_registration.Volunteer;
 import puraskaar.repository.volunteer_registration.VolunteerRegistrationRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,27 +15,26 @@ public class VolunteerRegistrationServices {
         this.volunteerRegistrationRepository = volunteerRegistrationRepository;
     }
 
-    public VolunteerRegistration saveRegistrationForm(VolunteerRegistration form){
+    public Volunteer saveRegistrationForm(Volunteer form){
         return volunteerRegistrationRepository.save(form);
     }
 
-    public List<VolunteerRegistration> retrieveAllRegistrationForms(){
+    public List<Volunteer> retrieveAllRegistrationForms(){
         return volunteerRegistrationRepository.findAll();
     }
 
-    public VolunteerRegistration findRegistrationFormById(Integer id){
-        VolunteerRegistration volunteer = volunteerRegistrationRepository.findById(id).orElse(null);
-        if(volunteer==null) throw new UserNotFoundException("id: " + id);
+    public Volunteer findRegistrationFormById(Integer id){
+        Volunteer volunteer = volunteerRegistrationRepository.findById(id).orElse(null);
         return volunteer;
     }
 
-    public VolunteerRegistration updateRegistrationForm(VolunteerRegistration form, Integer id){
+    public Volunteer updateRegistrationForm(Volunteer form, Integer id){
         this.deleteById(id);
         return volunteerRegistrationRepository.save(form);
     }
 
     public void deleteById(Integer id){
-        VolunteerRegistration volunteerRegistration = volunteerRegistrationRepository.findById(id).orElse(null);
-        if(volunteerRegistration !=null) volunteerRegistrationRepository.deleteById(id);
+        Volunteer volunteer = volunteerRegistrationRepository.findById(id).orElse(null);
+        if(volunteer !=null) volunteerRegistrationRepository.deleteById(id);
     }
 }
