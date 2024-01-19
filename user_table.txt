@@ -1,0 +1,8 @@
+CREATE TABLE User (
+    id INT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    role VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,  -- Consider using a secure hash function to store passwords
+    login_id VARCHAR(100) UNIQUE NOT NULL,
+    last_login TIMESTAMP
+);

@@ -39,8 +39,9 @@ public class VolunteerController {
     }
 
     @PutMapping("/forms/{id}")
-    public Volunteer updateRegistrationForm(@RequestBody Volunteer volunteerRegistration, @PathVariable Integer id){
-        Volunteer volunteer = services.updateRegistrationForm(volunteerRegistration, id);
+    public Volunteer updateRegistrationForm(@RequestBody Volunteer volunteerRegistration, @PathVariable Long id){
+        volunteerRegistration.setId(id);
+        Volunteer volunteer = services.saveRegistrationForm(volunteerRegistration);
         if(volunteer==null) throw new UserNotFoundException("id: " + id);
         return volunteer;
     }

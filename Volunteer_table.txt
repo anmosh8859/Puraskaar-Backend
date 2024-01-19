@@ -1,0 +1,22 @@
+CREATE TABLE Volunteer (
+    id INT PRIMARY KEY,
+    email_id VARCHAR(255) NOT NULL,
+    role VARCHAR(50) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    date_of_birth DATE NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    city_name VARCHAR(50) NOT NULL,
+    pincode INT NOT NULL,
+    phone_number VARCHAR(15) NOT NULL,
+    applied_department VARCHAR(50) NOT NULL,
+    teaching_department VARCHAR(50), -- Nullable column
+    working_hours INT NOT NULL,
+    aadhaar_number VARCHAR(20) NOT NULL,
+    aadhaar_filepath VARCHAR(255), -- File path for Aadhaar, nullable
+    driving_license_number VARCHAR(20) NOT NULL,
+    driving_license_filepath VARCHAR(255), -- File path for Driving License, nullable
+    passport_number VARCHAR(20) NOT NULL,
+    passport_filepath VARCHAR(255), -- File path for Passport, nullable
+    photo_filepath VARCHAR(255), -- File path for Photo, nullable
+    resume_filepath VARCHAR(255) -- File path for Resume, nullable
+);
