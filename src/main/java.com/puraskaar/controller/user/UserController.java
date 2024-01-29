@@ -1,15 +1,14 @@
-package com.puraskaar.puraskaar.controller.user;
+package puraskaar.controller.user;
 
-import com.puraskaar.puraskaar.entity.users.User;
-import com.puraskaar.puraskaar.error.ErrorDetails;
-import com.puraskaar.puraskaar.exceptionhandler.UserNotFoundException;
+import puraskaar.entity.users.User;
+import puraskaar.exceptionhandler.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.puraskaar.puraskaar.services.user.UserServices;
+import puraskaar.services.user.UserServices;
 
 import java.util.List;
 

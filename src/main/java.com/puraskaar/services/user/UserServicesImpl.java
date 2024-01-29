@@ -1,7 +1,7 @@
-package com.puraskaar.puraskaar.services.user;
+package puraskaar.services.user;
 
-import com.puraskaar.puraskaar.entity.users.User;
-import com.puraskaar.puraskaar.repository.user.UserRepository;
+import puraskaar.entity.users.User;
+import puraskaar.repository.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

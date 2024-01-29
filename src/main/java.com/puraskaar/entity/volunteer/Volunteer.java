@@ -1,4 +1,4 @@
-package com.puraskaar.puraskaar.entity.volunteer;
+package puraskaar.entity.volunteer;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

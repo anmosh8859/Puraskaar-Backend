@@ -1,4 +1,4 @@
-package com.puraskaar.puraskaar.entity.users;
+package puraskaar.entity.users;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

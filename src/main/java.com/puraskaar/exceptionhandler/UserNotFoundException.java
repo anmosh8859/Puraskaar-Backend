@@ -1,4 +1,4 @@
-package com.puraskaar.puraskaar.exceptionhandler;
+package puraskaar.exceptionhandler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseBody;

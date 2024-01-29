@@ -1,8 +1,8 @@
-package com.puraskaar.puraskaar.controller.volunteer;
+package puraskaar.controller.volunteer;
 
-import com.puraskaar.puraskaar.entity.volunteer.Volunteer;
-import com.puraskaar.puraskaar.exceptionhandler.UserNotFoundException;
-import com.puraskaar.puraskaar.services.volunteer.VolunteerServicesImpl;
+import puraskaar.entity.volunteer.Volunteer;
+import puraskaar.exceptionhandler.UserNotFoundException;
+import puraskaar.services.volunteer.VolunteerServicesImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +24,7 @@ public class VolunteerController {
     }
 
     @GetMapping("/forms/{id}")
-    public Volunteer retrieveVolunteer(@PathVariable Integer id){
+    public Volunteer retrieveVolunteer(@PathVariable Long id){
         Volunteer volunteer = services.findRegistrationFormById(id);
         if(volunteer==null) throw new UserNotFoundException("Volunteer not found, id: " + id);
         return volunteer;
@@ -47,7 +47,7 @@ public class VolunteerController {
     }
 
     @DeleteMapping("/forms/{id}")
-    public void deleteRegistrationForm(@PathVariable Integer id){
+    public void deleteRegistrationForm(@PathVariable Long id){
         services.deleteById(id);
     }
 }
